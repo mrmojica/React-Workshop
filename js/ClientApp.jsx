@@ -1,19 +1,22 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Landing from './Landing';
+import Search from './Search';
 
-// const test = (a,b) => { return a+b };
-// since implicet return rewrite to:
-// const test2 = (a,b) =>  a+b;
-
+// if dont recognize anything, uses Switch to make sure only one component render
+const FourOhFour = () => <h1>404</h1>
 
 const App = () => (
-		<div className='app'>
-			<div className='landing'>
-				<h1>svideo</h1>
-				<input type='text' placeholder='Search' />
-				<a>or Browse All </a>
-			</div>
-		</div>
-	);
+	<BrowserRouter>
+  <div className="app">
+  	<Switch>
+	  	<Route exact path="/" component={Landing} />
+	  	<Route path="/search" component={Search} />
+	  	<Route component={FourOhFour} />
+  	</Switch>
+  </div>
+  </BrowserRouter>
+);
 
 render(<App />, document.getElementById('app'));

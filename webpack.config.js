@@ -8,6 +8,11 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
   },
+  devServer: {
+    publicPath: '/public/',
+    //required for browserRouter to work
+    historyApiFallback: true
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.json']
   },
@@ -20,7 +25,7 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /|.jsx?$/,
+        test: /\.jsx?$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
       },
