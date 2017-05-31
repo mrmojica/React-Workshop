@@ -10,7 +10,6 @@ module.exports = {
   },
   devServer: {
     publicPath: '/public/',
-    //required for browserRouter to work
     historyApiFallback: true
   },
   resolve: {
