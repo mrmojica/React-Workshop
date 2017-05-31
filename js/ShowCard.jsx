@@ -1,8 +1,8 @@
 // @flow
 
 import React from 'react';
-// can be used to ignore flow
-// $FlowFixMe
+// ($FlowFixMe) can be used to ignore flow
+
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
