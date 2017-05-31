@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import preload from '../data.json';
 import ShowCard from './ShowCard';
@@ -27,7 +29,8 @@ class Search extends Component {
 	// }
 
 	// alternatively you can use an arrow function to the function to fix bind issue
-		handleSearchTermChange = event => { this.setState({searchTerm: event.target.value}) }
+
+		  handleSearchTermChange = (event: SyntheticKeyboardEvent & { target: HTMLInputElement }) => { this.setState({searchTerm: event.target.value}) }
 
 
 render() {
